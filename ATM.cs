@@ -34,15 +34,14 @@ namespace AtmRedmindKaan
                 Console.WriteLine("Not enough balance in account");
                 return false;
             }
-
-            //Lägg while i en metod, som tex returnerar console writeline
-            while (amount != 0 && RemainingTotalAmount != 0)
+            //amount != 0 && RemainingTotalAmount != 0
+            while (true)
             {
                 if (amount >= 1000 && ThousandBill != 0)
                 {
                     amount -= 1000;
                     UsedThousandbill++;
-                    ThousandBill -= 1;
+                    ThousandBill --;
                     Console.WriteLine($"Tried to withdrawal: 1x - 1000\nWithdrawal left: {amount}");
 
                 }
@@ -51,7 +50,7 @@ namespace AtmRedmindKaan
                 {
                     amount -= 500;
                     UsedFiveHundredBill++;
-                    FivehundredBill -= 1;
+                    FivehundredBill --;
                     Console.WriteLine($"Tried to withdrawal: 1x - 500\nWithdrawal left: {amount}");
                 }
 
